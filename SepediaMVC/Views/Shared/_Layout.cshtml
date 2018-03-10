@@ -6,15 +6,30 @@
     <title>@ViewBag.Title SEPedia</title>
     @Styles.Render("~/Content/css")
     <link href="~/Content/Custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>            
-         
-       <div id="list">
-            @RenderSection("list")
-         </div>
-        <div id="main" class="container body-content">
+   
+    <div class="topnav container" style="padding-left:0px !important">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">Documentation</a>
+        <a href="#contact">FAQ</a>
+        <a href="#about">About</a>
+        <div class="search-container fright">
+            <form action="#">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <a href="#login" style="float:right">Login</a>
+    </div>
+    <div id="list">
+        @RenderSection("list")
+    </div> 
+    <div class="container" style="padding-left:0px !important">
+        <div id="content" class="container body-content sp-body">
             <div>
                 <header id="header">
                     @RenderSection("header")
@@ -22,6 +37,9 @@
             </div>
             @RenderBody()
         </div>
+    </div> 
+      
+      
         <div>
             <footer id="footer">
                 <p>&copy; @DateTime.Now.Year - SEPedia. All rights reserved.</p>
